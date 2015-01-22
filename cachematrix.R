@@ -7,27 +7,19 @@
 
 
 makeCacheMatrix <- function(x = matrix()) {
-        
-        
         # holds the cached value or NULL if nothing is cached
         cache <- NULL
-        
         # store a matrix
         setM <- function(y) {
                 x <<- y
                 cache <<- NULL
         }
-
         # returns the stored matrix
         getM <- function()    x
-        
-
         # cache the given argument 
         cacheInv <- function(z)    cache <<- z
-
         # get the cached value
         getInv <- function()  cache
-        
         # return a list. Each named element of the list is a function
         list(setM = setM, getM = getM, cacheInv = cacheInv, getInv = getInv)
         
